@@ -1,4 +1,4 @@
-styleguide-uniekezaak-nl
-========================
 
-Styleguide for uniekezaak.nl
+# Blog
+
+The default [wintersmith](https://github.com/jnordberg/wintersmith) template
