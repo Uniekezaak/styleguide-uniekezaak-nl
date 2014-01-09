@@ -1,17 +1,27 @@
-lib-cov
-*.seed
+# Numerous always-ignore extensions
+*.diff
+*.err
+*.orig
 *.log
-*.csv
-*.dat
-*.out
-*.pid
-*.gz
-*.idea
+*.rej
+*.swo
+*.swp
+*.zip
+*.vi
+*~
 
-pids
-logs
-results
-bower_components
+# OS folders
+.DS_Store
+._*
+Thumbs.db
 
-npm-debug.log
+# Folders to ignore
+.hg
+.svn
+.CVS
+.idea
+
 node_modules
+dist
+.tmp
+app/bower_components
