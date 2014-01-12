@@ -3,76 +3,13 @@
 @import "../bower_components/bootstrap/less/bootstrap.less";
 @icon-font-path: "../fonts/glyphicons/";
 
-@import "../bower_components/font-awesome/less/font-awesome.less";
 @fa-font-path: "../fonts/font-awesome";
+@import "../bower_components/font-awesome/less/font-awesome.less";
 
 @import "../fonts/google/cutivemono.less";
 @uniekezaak-font-path: "../fonts/uniekezaak/";
 
-
 @import "../fonts/uniekezaak/stylesheet.less";
-
-h1, h2,h3,h4,h5 {
-  text-transform: uppercase;
-}
-
-// NAVIGATIE
-body {
-  padding-top:@navbar-height;
-}
-
-.logo-text {
-  font-family: 'uniekezaakregular';
-  text-transform: uppercase;
-  font-size: 40px;
-  margin-top: 40px;
-}
-
-.logo img {
-  margin-top: 5px;
-  height:90px;
-  width:90px;
-}
-
-.navbar-center {
-  width:50
-  margin:0 auto;
-}
-.navbar-center-inner {
-  margin:0 auto;
-  width:50%;
-}
-
-.navbar-brand {
-  padding: 0px;
-}
-
-.unieke-navigatie {
-  -webkit-box-shadow: 0px 1px 22px 0px rgba(50, 50, 50, 0.16);
-  -moz-box-shadow:    0px 1px 22px 0px rgba(50, 50, 50, 0.16);
-  box-shadow:         0px 1px 22px 0px rgba(50, 50, 50, 0.16);
-}
-
-// END NAVIGATIE
-
-.uniek-product-image {
-  padding:10px;
-}
-
-.spacesmall {
-  margin-top: @line-height-computed;
-}
-.space {
-   margin-top: ceil(2*@line-height-computed);
- }
-.spacelarge {
-   margin-top: ceil(4*@line-height-computed);
-  }
-
-.unieke-afbeelding {
-  padding:10px;
-  text-align: center;
-}
-.unieke-afbeelding img {
-  width:90%;
-}
+@import "sidebar.less";
+@import "navbar.less";
+@import "uniekezaak.less";
