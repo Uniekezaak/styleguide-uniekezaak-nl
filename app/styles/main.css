@@ -7538,9 +7538,18 @@ h5 {
 }
 .unieke-pagina-opleuk {
   height: 3px;
-  background-color: #fc54a3;
+  background-color: #97bf04;
 }
 .badge-primary {
   background-color: #fc54a3;
+}
+body {
+  background: #f9f7f0 url(/images/bg.jpg) repeat fixed;
+}
+.navbar-default {
+  background-color: transparent;
+}
+.unieke-navigatie {
+  background-color: #eeebe0;
 }
 /*# sourceMappingURL=/styles/main.css.map */

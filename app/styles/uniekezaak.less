@@ -1,6 +1,7 @@
 h1, h2,h3,h4,h5 {
   text-transform: uppercase;
-  text-shadow: 1px 1px 2px rgba(255, 255, 255, .5);}
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, .5);
+}
 
 .text-secundairy {
   color: @brand-secundiary;
@@ -13,28 +14,31 @@ h1, h2,h3,h4,h5 {
 .spacesmall {
   margin-top: @line-height-computed;
 }
+
 .space {
-  margin-top: ceil(2*@line-height-computed);
+  margin-top: ceil(2 * @line-height-computed);
 }
+
 .spacelarge {
-  margin-top: ceil(4*@line-height-computed);
+  margin-top: ceil(4 * @line-height-computed);
 }
 
 .unieke-afbeelding {
-  padding:10px;
+  padding: 10px;
   text-align: center;
 }
 
 .unieke-afbeelding img {
-  width:90%;
+  width: 90%;
 }
 
 .unieke-voeter {
-  border-top:3px solid @brand-secundiary;
-  border-bottom:3px solid @gray-dark;
+  border-top: 3px solid @brand-secundiary;
+  border-bottom: 3px solid @gray-dark;
 }
+
 .unieke-voeter h4 i {
-  color:@gray-darker;
+  color: @gray-darker;
 }
 
 .unieke-voordelen {
@@ -49,15 +53,28 @@ h1, h2,h3,h4,h5 {
   padding:5px;
   background-color: @gray-darker;
 }
+
 .uniek-pagina-einde img {
-width: 30px;
+  width: 30px;
 }
 
 .unieke-pagina-opleuk {
   height: 3px;
-  background-color: @brand-primary;
+  background-color: @brand-secundiary;
 }
 
 .badge-primary {
   background-color: @brand-primary;
+}
+
+body {
+  background: @gray-lighter url(/images/bg.jpg) repeat fixed;
+}
+
+.navbar-default {
+  background-color: transparent;
+}
+
+.unieke-navigatie {
+  background-color: @gray-light;
 }

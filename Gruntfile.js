@@ -301,9 +301,23 @@ module.exports = function (grunt) {
     'concat',
     'uglify',
     'copy',
+    'usemin'
+  ]);
+  
+  /* 
+  grunt.registerTask('build', [
+    'clean:dist',
+    'copy:server',
+    'useminPrepare',
+    'concurrent',
+    'cssmin',
+    'concat',
+    'uglify',
+    'copy',
     'rev',
     'usemin'
   ]);
+  */
 
   grunt.registerTask('default', [
     'jshint',
