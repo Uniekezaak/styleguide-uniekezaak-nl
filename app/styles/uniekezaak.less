@@ -1,4 +1,17 @@
-h1, h2,h3,h4,h5 {
+.logo-text {
+  font-family: 'uniekezaakregular';
+  text-transform: uppercase;
+  font-size: 90px;
+  margin-top:50px;
+}
+
+.logo img {
+  height:60%;
+  width:60%;
+  margin-left: 50px;
+}
+
+h1, h2, h3, h4, h5, body {
   text-transform: uppercase;
   text-shadow: 1px 1px 2px rgba(255, 255, 255, .5);
 }
@@ -58,23 +71,31 @@ h1, h2,h3,h4,h5 {
   width: 30px;
 }
 
-.unieke-pagina-opleuk {
-  height: 3px;
-  background-color: @brand-secundiary;
-}
 
 .badge-primary {
   background-color: @brand-primary;
 }
 
 body {
-  background: @gray-lighter url(/images/bg.jpg) repeat fixed;
+  background-color: @gray ;
+ }
+
+.container {
+  padding: 0px 60px;
+  background-color: #fff;
 }
 
-.navbar-default {
-  background-color: transparent;
+.uniek-vakje {
+  padding: 4px 2px 3px 2px;
+  margin: 0 .5em 0 0;
+  border-width:4px 8px 7px 6px;
+  -moz-border-image:url("../images/photo-bg.png") 4 8 7 6 round;
+  -webkit-border-image:url("../images/photo-bg.png") 4 8 7 6 round;
+  border-image:url("../images/photo-bg.png") 4 8 7 6 round;
+
 }
 
-.unieke-navigatie {
-  background-color: @gray-light;
+.navbar {
+  font-size: 23px;
 }
+

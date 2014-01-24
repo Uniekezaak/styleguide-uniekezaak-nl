@@ -11,8 +11,8 @@
 @gray-lighter: #f9f7f0;
 
 // Brand Colors
-@brand-primary: #fc54a3;
-@brand-secundiary: #97bf04;
+@brand-primary: #97bf04;
+@brand-secundiary: #fc54a3;
 @brand-success: @brand-secundiary;
 @brand-warning: #f0ad4e;
 @brand-danger: #d9534f;
@@ -39,9 +39,9 @@
 // Typography
 @font-family-sans-serif: uniekezaakregular;
 @font-family-serif: Open Sans;
-@font-family-monospace: "PT Mono";
+@font-family-monospace: @font-family-sans-serif;
 @font-family-base: @font-family-monospace;
-@font-size-base: 13px;
+@font-size-base: 16px;
 @font-size-large: ceil(@font-size-base * 1.25);
 @font-size-small: ceil(@font-size-base * 0.85);
 @font-size-h1: floor((@font-size-base * 3.6)); // ~36px
@@ -124,11 +124,11 @@
 
 
 // Navbar
-@navbar-height: 100px;
-@navbar-margin-bottom: @line-height-computed;
+@navbar-height: 150px;
+@navbar-margin-bottom: 0px;
 @navbar-default-color: #777;
-@navbar-default-bg: @gray-lighter;
-@navbar-default-border: none;
+@navbar-default-bg: transparent;
+@navbar-default-border: 0px solid transparent;
 @navbar-border-radius: none;
 @navbar-padding-horizontal: floor(@grid-gutter-width / 2);
 @navbar-padding-vertical: ((@navbar-height - @line-height-computed) / 2);
@@ -226,10 +226,10 @@
 @breadcrumb-separator: "/";
 
 // Carousel
-@carousel-text-shadow: 0 1px 2px rgba(0,0,0,.6);
+@carousel-text-shadow: 0 1px 2px rgba(255,255,255,.6);
 @carousel-control-color: #fff;
 @carousel-control-width: 15%;
-@carousel-control-opacity: .5;
+@carousel-control-opacity: .0;
 @carousel-control-font-size: 20px;
 @carousel-indicator-active-bg: #fff;
 @carousel-indicator-border-color: #fff;
