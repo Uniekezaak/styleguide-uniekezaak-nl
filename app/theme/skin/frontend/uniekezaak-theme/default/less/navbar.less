@@ -1,0 +1,22 @@
+@import "../components/bootstrap/less/navbar.less";
+
+.navbar-main {
+
+	.navbar-nav {
+		float:none;
+		margin:0 auto;
+		text-align: center;
+	}
+    .navbar-brand {
+
+        @media (min-width: @grid-float-breakpoint) {
+            & {
+                display: none;
+            }
+        }
+    }
+
+    ul.level0 {
+        display: none;
+    }
+}
