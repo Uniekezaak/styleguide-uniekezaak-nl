@@ -8,6 +8,7 @@
 // 'test/spec/**/*.js'
 
 module.exports = function (grunt) {
+    
   // load all grunt tasks
   require('load-grunt-tasks')(grunt);
   // show elapsed time at the end
@@ -18,16 +19,18 @@ module.exports = function (grunt) {
     app: require('./bower.json').appPath || 'app',
     dist: 'dist'
   };
+  
+  var skinDir = 'app/theme/skin/frontend/uniekezaak-theme/default/';
+
+console.log(skinDir);
 
   grunt.initConfig({
     yeoman: yeomanConfig,
     watch: {
-      coffee: {
-        files: ['<%= yeoman.app %>/scripts/{,*/}*.coffee'],
-        tasks: ['coffee']
-      },
       less: {
-        files: ['<%= yeoman.app %>/styles/{,*/}*.less'],
+        files: [
+		skinDir + 'less/{,*/}*.less'
+	       ],
         tasks: ['less']
       },
       gruntfile: {
@@ -39,17 +42,17 @@ module.exports = function (grunt) {
         },
         files: [
           '<%= yeoman.app %>/*.html',
-          '{.tmp,<%= yeoman.app %>}/styles/{,*/}*.css',
-          '{.tmp,<%= yeoman.app %>}/scripts/{,*/}*.js',
-          '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
+          '{.tmp,<%= yeoman.app %>}/theme/skin/frontend/uniekezaak-theme/default/css/{,*/}*.css',
+          '{.tmp,<%= yeoman.app %>}/theme/skin/frontend/uniekezaak-theme/default/js/{,*/}*.js',
+          '<%= yeoman.app %>/theme/skin/frontend/uniekezaak-theme/default/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
         ]
       }
     },
     connect: {
       options: {
         port: 9000,
-        // change this to '0.0.0.0' to access the server from outside
-        hostname: 'localhost',
+        // change this to'0.0.0.0' to access the server from outside
+        hostname: '0.0.0.0',
         livereload: 35729
       },
       livereload: {
@@ -106,29 +109,20 @@ module.exports = function (grunt) {
       all: {
         options: {
           run: true,
-          urls: ['http://localhost:<%= connect.options.port %>/index.html']
+          urls: ['http://styleguide.uniekezaak.nl:<%= connect.options.port %>/index.html']
         }
       }
     },
-    coffee: {
-      dist: {
-        files: [{
-          expand: true,
-          cwd: '<%= yeoman.app %>/scripts',
-          src: '{,*/}*.coffee',
-          dest: '<%= yeoman.app %>/scripts',
-          ext: '.js'
-        }]
-      }
-    },
     less: {
-      dist: {
+      all: {
         files: {
-          '<%= yeoman.app %>/styles/main.css': ['<%= yeoman.app %>/styles/main.less']
+          '<%= yeoman.app %>/theme/skin/frontend/uniekezaak-theme/default/css/style.css': [skinDir + 'less/style.less']
         },
         options: {
+          cleancss: true,
+          compress: true,
           sourceMap: true,
-          sourceMapFilename: '<%= yeoman.app %>/styles/main.css.map',
+          sourceMapFilename: '<%= yeoman.app %>/theme/skin/frontend/uniekezaak-theme/default/css/main.css.map',
           sourceMapBasepath: '<%= yeoman.app %>/',
           sourceMapRootpath: '/'
         }
@@ -149,10 +143,10 @@ module.exports = function (grunt) {
       dist: {
         files: {
           src: [
-            '<%= yeoman.dist %>/scripts/{,*/}*.js',
-            '<%= yeoman.dist %>/styles/{,*/}*.css',
-            '<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp}',
-            '<%= yeoman.dist %>/fonts/{,*/}*.*'
+            '<%= yeoman.dist %>/theme/skin/frontend/uniekezaak-theme/default/js/{,*/}*.js',
+            '<%= yeoman.dist %>/theme/skin/frontend/uniekezaak-theme/default/css/{,*/}*.css',
+            '<%= yeoman.dist %>/theme/skin/frontend/uniekezaak-theme/default/images/{,*/}*.{png,jpg,jpeg,gif,webp}',
+            '<%= yeoman.dist %>/theme/skin/frontend/uniekezaak-theme/default/fonts/{,*/}*.*'
           ]
         }
       }
@@ -165,7 +159,7 @@ module.exports = function (grunt) {
     },
     usemin: {
       html: ['<%= yeoman.dist %>/{,*/}*.html'],
-      css: ['<%= yeoman.dist %>/styles/{,*/}*.css'],
+      css: ['<%= yeoman.dist %>/theme/skin/frontend/uniekezaak-theme/default/css/{,*/}*.css'],
       options: {
         dirs: ['<%= yeoman.dist %>']
       }
@@ -193,32 +187,11 @@ module.exports = function (grunt) {
     cssmin: {
       dist: {
         files: {
-          '<%= yeoman.dist %>/styles/main.css': [
+          '<%= yeoman.dist %>/theme/skin/frontend/uniekezaak-theme/default/css/style.css': [
             '.tmp/styles/{,*/}*.css',
-            '<%= yeoman.app %>/styles/{,*/}*.css'
+            '<%= yeoman.app %>/theme/skin/frontend/uniekezaak-theme/default/css/{,*/}*.css'
           ]
         }
-      }
-    },
-    htmlmin: {
-      dist: {
-        options: {
-          /*removeCommentsFromCDATA: true,
-          // https://github.com/yeoman/grunt-usemin/issues/44
-          //collapseWhitespace: true,
-          collapseBooleanAttributes: true,
-          removeAttributeQuotes: true,
-          removeRedundantAttributes: true,
-          useShortDoctype: true,
-          removeEmptyAttributes: true,
-          removeOptionalTags: true*/
-        },
-        files: [{
-          expand: true,
-          cwd: '<%= yeoman.app %>',
-          src: '*.html',
-          dest: '<%= yeoman.dist %>'
-        }]
       }
     },
     copy: {
@@ -246,7 +219,7 @@ module.exports = function (grunt) {
         }, {
           expand: true,
           dot: true,
-          cwd: '<%= yeoman.app %>/bower_components/bootstrap/fonts/',
+          cwd: '<%= yeoman.app %>//bootstrap/fonts/',
           dest: '<%= yeoman.app %>/fonts/glyphicons',
           src: ['*']
         }]
@@ -254,10 +227,9 @@ module.exports = function (grunt) {
     },
     concurrent: {
       dist: [
-        'coffee',
         'less',
-        'imagemin',
-        'svgmin',
+        //'imagemin',
+        //'svgmin',
         'htmlmin'
       ]
     }
@@ -270,8 +242,8 @@ module.exports = function (grunt) {
 
     grunt.task.run([
       'clean:server',
-      'coffee',
       'less',
+      'cssmin',
       'copy:server',
       'connect:livereload',
       'watch'
@@ -295,13 +267,13 @@ module.exports = function (grunt) {
   grunt.registerTask('build', [
     'clean:dist',
     'copy:server',
-    'useminPrepare',
+    //'useminPrepare',
     'concurrent',
     'cssmin',
-    'concat',
-    'uglify',
+    //'concat',
+    //'uglify',
     'copy',
-    'usemin'
+    //'usemin'
   ]);
   
   /* 
