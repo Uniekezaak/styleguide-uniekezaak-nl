@@ -1,14 +1,14 @@
 // Grays
-@gray-darker: #312f27;
-@gray-dark: #686353;
+@gray-darker: #3c3b31;
+@gray-dark: #075400;
 @gray: #d2cec0;
-@gray-light: #eeebe0;
-@gray-lighter: #f9f7f0;
+@gray-light: #c7d9c1;
+@gray-lighter: #f7f3e4;
 @white: #fff;
 
 // Brand Colors
-@brand-primary: #97bf04;
-@brand-secundiary: #fc54a3;
+@brand-primary: #d3862b;
+@brand-secundiary: #535d47;
 @brand-success: @brand-secundiary;
 @brand-warning: #f0ad4e;
 @brand-danger: #d9534f;
@@ -16,8 +16,8 @@
 
 // Scaffolding
 @body-bg: @white;
-@text-color: @gray-dark;
-@link-color: @brand-primary;
+@text-color: @gray-darker;
+@link-color: @gray-dark;
 @link-hover-color: darken(@link-color, 15%);
 @padding-base-vertical: 6px;
 @padding-base-horizontal: 12px;
@@ -25,27 +25,27 @@
 @padding-large-horizontal: 16px;
 @padding-small-vertical: 5px;
 @padding-small-horizontal: 10px;
-@border-radius-base: 0px;
-@border-radius-large: 0px;
-@border-radius-small: 0px;
+@border-radius-base: 5px;
+@border-radius-large: 7px;
+@border-radius-small: 3px;
 @line-height-large: 1.33;
 @line-height-small: 1.5;
 @component-active-bg: @brand-primary;
 
 // Typography
 @font-family-sans-serif: uniekezaakregular;
-@font-family-serif: Open Sans;
-@font-family-monospace: @font-family-sans-serif;
+@font-family-serif: 'Open Sans';
+@font-family-monospace: @font-family-serif;
 @font-family-base: @font-family-monospace;
-@font-size-base: 18px;
+@font-size-base: 14px;
 @font-size-large: ceil(@font-size-base * 1.25);
 @font-size-small: ceil(@font-size-base * 0.85);
-@font-size-h1: floor((@font-size-base * 3.6)); // ~36px
-@font-size-h2: floor((@font-size-base * 3.15)); // ~30px
-@font-size-h3: ceil((@font-size-base * 2.0)); // ~24px
-@font-size-h4: ceil((@font-size-base * 1.4)); // ~18px
-@font-size-h5: @font-size-base;
-@font-size-h6: ceil((@font-size-base * 0.85)); // ~12px
+@font-size-h1: floor((@font-size-base * 4.6)); // ~36px
+@font-size-h2: floor((@font-size-base * 4.15)); // ~30px
+@font-size-h3: ceil((@font-size-base * 3.0)); // ~24px
+@font-size-h4: ceil((@font-size-base * 2.4)); // ~18px
+@font-size-h5: ceil(@font-size-base * 2);
+@font-size-h6: @font-size-base; // ~12px
 @line-height-base: 1.428571429;
 @line-height-computed: floor(@font-size-base * @line-height-base);
 @headings-font-family: @font-family-sans-serif;
@@ -56,10 +56,10 @@
 // Buttons
 @btn-font-weight: normal;
 @btn-default-color: @gray-lighter;
-@btn-default-bg: @brand-secundiary;
-@btn-default-border: @brand-secundiary;
-@btn-primary-color: @brand-primary;
-@btn-primary-bg: @gray-lighter;
+@btn-default-bg: @brand-primary;
+@btn-default-border: @gray-dark;
+@btn-primary-color: @gray-darker;
+@btn-primary-bg: @gray-light;
 @btn-primary-border: darken(@btn-primary-bg, 5%);
 @btn-success-color: #fff;
 @btn-success-bg: @brand-success;
@@ -114,25 +114,25 @@
 @table-condensed-cell-padding: 5px;
 @table-bg: transparent;
 @table-bg-accent: @gray-light;
-@table-bg-hover: #f5f5f5;
+@table-bg-hover: @gray-lighter;
 @table-bg-active: @table-bg-hover;
 @table-border-color: #ddd;
 
 
 // Navbar
-@navbar-height: 50px;
+@navbar-height: 40px;
 @navbar-margin-bottom: 0px;
 @navbar-default-color: #777;
 @navbar-default-bg: @gray-lighter;
-@navbar-default-border: 1px solid @gray;
-@navbar-border-radius: none;
+@navbar-default-border: none;
+@navbar-border-radius: @border-radius-base;
 @navbar-padding-horizontal: floor(@grid-gutter-width / 2);
 @navbar-padding-vertical: ((@navbar-height - @line-height-computed) / 2);
-@navbar-default-link-color: @brand-primary;
-@navbar-default-link-hover-color: @brand-primary;
-@navbar-default-link-hover-bg: @gray-darker;
-@navbar-default-link-active-color: @brand-primary;
-@navbar-default-link-active-bg: @gray-dark;
+@navbar-default-link-color: @brand-secundiary;
+@navbar-default-link-hover-color: @brand-secundiary;
+@navbar-default-link-hover-bg: lighten(@gray-light, 10%);
+@navbar-default-link-active-color: @gray-darker;
+@navbar-default-link-active-bg: @gray-light;
 @navbar-default-link-disabled-color: #ccc;
 @navbar-default-link-disabled-bg: transparent;
 @navbar-default-brand-color: @navbar-default-link-color;
@@ -167,7 +167,7 @@
 @navbar-inverse-toggle-border-color: #333;
 
 // Navs Tabs
-@nav-link-padding: 5px 10px;
+@nav-link-padding: 5px 25px;
 @nav-link-hover-bg: @gray-lighter;
 @nav-disabled-link-color: @gray-light;
 @nav-disabled-link-hover-color: @gray-light;
@@ -176,8 +176,8 @@
 @nav-tabs-active-link-hover-bg: @body-bg;
 @nav-tabs-active-link-hover-color: @gray;
 @nav-tabs-active-link-hover-border-color: #ddd;
-@nav-tabs-justified-link-border-color: #ddd;
-@nav-tabs-justified-active-link-border-color: @body-bg;
+@nav-tabs-justified-link-border-color: #ff7f1f;
+@nav-tabs-justified-active-link-border-color: #ff7f1f;
 @nav-pills-border-radius: @border-radius-base;
 @nav-pills-active-link-hover-bg: @component-active-bg;
 @nav-pills-active-link-hover-color: #fff;
@@ -200,7 +200,7 @@
 @pager-disabled-color: @gray-light;
 
 // Wells
-@well-bg: #f5f5f5;
+@well-bg: @gray-lighter;
 @well-border: darken(@well-bg, 7%);
 
 // Badges
@@ -216,8 +216,8 @@
 // Breadcrumbs
 @breadcrumb-padding-vertical: 8px;
 @breadcrumb-padding-horizontal: 15px;
-@breadcrumb-bg: #f5f5f5;
-@breadcrumb-color: #ccc;
+@breadcrumb-bg: @white;
+@breadcrumb-color: @gray;
 @breadcrumb-active-color: @gray-light;
 @breadcrumb-separator: "/";
 

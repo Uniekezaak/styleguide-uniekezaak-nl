@@ -3,6 +3,7 @@
 @uniekezaak-font-path: "../fonts/uniekezaak/";
 
 @import "../fonts/uniekezaak/stylesheet.less";
+@import "../fonts/google/patrickhand.less";
 
 h1, h2, h3, h4, h5 {
   text-transform: uppercase;
@@ -86,5 +87,44 @@ h1, h2, h3, h4, h5 {
 }
 
 .navbar {
-  font-size: 23px;
+  font-size: 22px;
+}
+
+.level0 a::before {
+  display: inline-block;
+  font-family: uniekezaakregular;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1.1em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 2.4em;
+  margin-right: .2em;
+  float:left;
+}
+
+.level0 a {
+	line-height: 2.4em;
+}
+
+.nav-1 a::before {
+  content: "\00F9";
+}
+.nav-2 a::before {
+  font-size: 1.9em;
+  line-height: 1.3em;
+  content: "\F003";
+}
+.nav-3 a::before {
+  content: "\02C7";
+}
+.nav-4 a::before {
+  content: "\02DD";
+}
+.nav-5 a::before {
+  content: "\02DB";
+}
+
+.nav-justified>li>a {
+	text-align: left !important;
 }
